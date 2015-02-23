@@ -1,0 +1,48 @@
+<div align="center"><h1>Click#index</h1></div>
+
+<a href="#" prompt="What is your name?">Start</a>
+
+<div class="row">
+	<div align="center"><h1><%= @click_count %></h1></div>
+</div>
+<div align="center">
+	<div class="btn btn-primary">Click</div>
+</div>
+
+<script type="text/javascript">
+  function loadPosts(){
+    $.getJSON("/posts.json", function(data){
+      var html = "";
+    $.each(data, function (index){
+	// alert(data[index].content);
+	html += "<b><i>" + data[index].content + "</i></b><br>";
+	}); 
+	// update our div
+	  $("#posts").html(html);
+	});
+       }
+</script>
+
+<div id="posts">
+  <a href="javascript:loadPosts();">This is where blog posts go</a>
+</div>
+
+<script type="text/javascript">
+  function clickUp(){
+  	var click = 0;
+  	confirm("Are you sure?")
+    $.getJSON("/index.json", function(click){
+      click += 1;
+      $.each(click, function (index){
+	// alert(data[index].content);
+	html += "<b><i>" + click[index].content + "</i></b><br>";
+	}); 
+	// update our div
+	  $("#click").html(click);
+	});
+       }
+</script>
+
+<div id="click">
+  <a href="javascript:clickUp();">Test</a>
+</div>
