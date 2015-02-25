@@ -7,4 +7,7 @@ $(document).ready(function(){
 	$('.btn').mouseleave(function(){
 		$('.btn').fadeTo('fast', 1);
 	});
+	$('btn').click(function(){
+		$('.btn').hide();
+	})
 })
