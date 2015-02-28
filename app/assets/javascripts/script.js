@@ -11,7 +11,12 @@ $(document).ready(function(){
 	$('#clickMe').click(function(){
 		clicks ++;
 		$('h1').html(clicks);
-		$('body').css("background", "red")
+		if(clicks%2 == 0){
+			$('body').css("background", "red");
+		}
+			else{
+				$('body').css("background", "blue");	
+			}
 		if(clicks > 500) {
 			$('#clickCount').css("background", "purple");
 		}
@@ -35,5 +40,6 @@ $(document).ready(function(){
 		clicks = 0;
 		$('h1').html(clicks);
 		$('#clickCount').css("background", "#f5f5f5");
+		$('body').css("background", "none");
 	})
 })
