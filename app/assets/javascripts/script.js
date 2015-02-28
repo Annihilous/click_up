@@ -11,11 +11,29 @@ $(document).ready(function(){
 	$('#clickMe').click(function(){
 		clicks ++;
 		$('h1').html(clicks);
-		// if clicks === 10;
-		// 	$(this).css("background", "blue");
+		$('body').css("background", "red")
+		if(clicks > 500) {
+			$('#clickCount').css("background", "purple");
+		}
+		else if(clicks > 250){
+			$('#clickCount').css("background", "blue");
+		}
+		else if(clicks > 100){
+			$('#clickCount').css("background", "green");
+		}
+		else if(clicks > 50){
+			$('#clickCount').css("background", "orange");
+		}
+		else if(clicks > 25){
+			$('#clickCount').css("background", "yellow");
+		}		
+		else if(clicks > 9){
+			$('#clickCount').css("background", "gray");
+		}
 	})
 	$('#reset').click(function(){
 		clicks = 0;
 		$('h1').html(clicks);
+		$('#clickCount').css("background", "#f5f5f5");
 	})
 })
